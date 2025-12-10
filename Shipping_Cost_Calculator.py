@@ -2,9 +2,19 @@
 
 ## Input package weight and shipping rate
 weight = float(input("Enter the package weight in kilograms: "))
-currency = input("Enter the currency (e.g., USD, EUR, GBP): ").strip().upper()
-rate = float(input(f"Enter the shipping rate per kilogram in {currency}: "))
+while True:
+    try:
+        weight = float(input("Enter the package weight in kilograms: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a numeric value for the package weight.")
 
+while True:
+    try:
+        rate = float(input("Enter the shipping rate per kilogram: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a numeric value for the shipping rate.")
 ## Calculate shipping cost
 shipping_cost = weight * rate
 
